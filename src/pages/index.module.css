@@ -1,0 +1,163 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+/* --- Hero Section Styling --- */
+.heroBanner {
+  padding: 8rem 0; /* Increased padding for more space */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  /* Beautiful modern gradient background */
+  background: linear-gradient(135deg, #a8edea 0%, #e1bdc9 100%); /* Soft, smooth colors */
+  color: #333; /* Darker text for contrast on light background */
+}
+
+[data-theme='dark'] .heroBanner {
+  background: linear-gradient(135deg, #daa7dc 0%, #a340db 50%, #c9a7dc 100%); /* Darker gradient for dark mode */
+  color: black; /* Lighter text for contrast on dark background */
+}
+
+.hero__title {
+  font-size: 3.5rem; /* Larger title */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+.hero__subtitle {
+  font-size: 1.5rem; /* Improved subtitle size */
+  font-weight: 300;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 996px) { /* Tablets */
+  .heroBanner {
+    padding: 4rem 0;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.buttons .button {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px; /* Slightly rounded buttons */
+  transition: all 0.3s ease-in-out;
+}
+
+.buttons .button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(186, 151, 214, 0.2);
+}
+
+/* --- Module Cards Section Styling --- */
+.modulesSection {
+  padding: 4rem 0;
+  background-color: var(--ifm-background-color); /* Ensure consistent background */
+}
+
+.modulesRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center cards if not full row */
+  gap: 2rem; /* Spacing between cards */
+  margin-top: 2rem; /* Space below section title */
+}
+
+.moduleCardWrapper {
+  flex-basis: calc(25% - 2rem); /* 4 cards per row, accounting for gap */
+  max-width: calc(25% - 2rem);
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-bottom: 1rem; /* Adjust bottom margin for vertical spacing */
+}
+
+@media screen and (max-width: 996px) { /* Tablets */
+  .moduleCardWrapper {
+    flex-basis: calc(50% - 2rem); /* 2 cards per row */
+    max-width: calc(50% - 2rem);
+  }
+}
+
+@media screen and (max-width: 600px) { /* Mobile */
+  .moduleCardWrapper {
+    flex-basis: 100%; /* 1 card per row */
+    max-width: 100%;
+  }
+}
+
+.moduleCardLink {
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Inherit text color */
+  display: block; /* Make the link fill the card wrapper */
+  height: 100%; /* Ensure link takes full height of the card */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+
+  /* Card specific styles */
+  border-radius: 12px; /* Rounded corners for premium look */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  background-color: var(--ifm-card-background-color); /* Ensure card background is theme-aware */
+}
+
+[data-theme='dark'] .moduleCardLink {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Darker shadow for dark mode */
+}
+
+.moduleCardLink:hover {
+  transform: translateY(-8px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  border-color: var(--ifm-color-primary); /* Highlight with primary color */
+}
+
+[data-theme='dark'] .moduleCardLink:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Enhanced shadow for dark mode on hover */
+}
+
+.moduleCardLink .card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: none; /* Remove default card border if present */
+  background: transparent; /* Card background handled by .moduleCardLink */
+}
+
+.moduleCardLink .card__header h3 {
+  font-size: 1.3rem; /* Adjusted font size for card titles */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-font-color-base);
+}
+
+.moduleCardLink .card__body p {
+  font-size: 0.95rem; /* Adjusted font size for card description */
+  line-height: 1.4;
+  color: var(--ifm-font-color-base);
+}
+
+/* Adjust general spacing and typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ifm-heading-color);
+}
+
+p {
+  color: var(--ifm-font-color-base);
+}
