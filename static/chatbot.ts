@@ -1,3 +1,4 @@
+const API_URL = "https://web-production-e5f8d0.up.railway.app";
 
 document.addEventListener('DOMContentLoaded', () => {
   // --- 1. CREATE AND INJECT CSS ---
@@ -185,10 +186,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const data = await response.json();
-      // Assuming the backend returns a JSON with a 'response' key.
-      // Adjust data.response if your backend uses a different key.
+      console.log("BACKEND DATA:", data);   // 👈 PROOF TEST LINE
+
       const botResponse = data.answer || 'Sorry, I could not get a response.';
       addMessage(botResponse, 'bot');
+
 
     } catch (error) {
       console.error('Chatbot API Error:', error);

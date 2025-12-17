@@ -1,3 +1,4 @@
+const API_URL = "https://web-production-e5f8d0.up.railway.app";
 
 document.addEventListener('DOMContentLoaded', () => {
   // --- 1. CREATE AND INJECT CSS ---
@@ -188,11 +189,12 @@ document.addEventListener('DOMContentLoaded', () => {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
-     const data = await response.json();
-console.log("BACKEND DATA:", data);   // 👈 PROOF TEST LINE
+      const data = await response.json();
+      console.log("BACKEND DATA:", data);   // 👈 PROOF TEST LINE
 
-const botResponse = data.answer || 'Sorry, I could not get a response.';
-addMessage(botResponse, 'bot');
+      const botResponse = data.answer || 'Sorry, I could not get a response.';
+      addMessage(botResponse, 'bot');
+
 
 
     } catch (error) {
